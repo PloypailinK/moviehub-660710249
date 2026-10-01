@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react';
-import { getMovies } from '../api/tmdb';
+import { getMovies } from '../api/backend';
 import { Link } from 'react-router-dom';
 import FeaturedCarousel from '../components/FeaturedCarousel';
 //import { movies as localMovies } from '../data/data';
 // TODO ขั้นที่ 5: import { useEffect } from 'react' และ import { getMovies } from '../api/tmdb'
-
 const STEPS = [
   { n: 1, file: 'src/api/tmdb.js', what: 'เขียนส่วน fetch ใน getJSON' },
   { n: 2, file: 'src/api/tmdb.js', what: 'เขียน toMovie แปลง JSON ของ TMDB' },
