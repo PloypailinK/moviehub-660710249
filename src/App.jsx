@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import KeyBanner from './components/KeyBanner';
 import ProtectedRoute from './components/ProtectedRoute';
+import RequireRole from './components/RequireRole';
 import Home from './pages/Home';
 import Movies from './pages/Movies';
 import MovieDetail from './pages/MovieDetail';
@@ -13,6 +14,11 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Wishlist from './pages/Wishlist';
 import NotFound from './pages/NotFound';
+import AdminLayout from './pages/admin/AdminLayout';
+import AdminDashboard from './pages/admin/AdminDashboard';
+import AdminMovies from './pages/admin/AdminMovies';
+import AdminMovieForm from './pages/admin/AdminMovieForm';
+import AdminMembers from './pages/admin/AdminMembers';
 
 function App() {
   return (
