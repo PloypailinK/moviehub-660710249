@@ -28,13 +28,21 @@ function App() {
         <Navbar />
         <KeyBanner />
         <main className="flex-1">
-          <Routes>
+           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/movies" element={<Movies />} />
             <Route path="/movies/:id" element={<MovieDetail />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/me/wishlist" element={<ProtectedRoute><Wishlist /></ProtectedRoute>} />
+            {/* หลังบ้าน: ครอบทั้งกิ่งด้วย RequireRole ครั้งเดียว หน้าลูกทุกหน้าได้รับการป้องกันหมด */}
+            <Route path="/admin" element={<RequireRole role="admin"><AdminLayout /></RequireRole>}>
+              <Route index element={<AdminDashboard />} />
+              <Route path="movies" element={<AdminMovies />} />
+              <Route path="movies/new" element={<AdminMovieForm />} />
+              <Route path="movies/:id" element={<AdminMovieForm />} />
+              <Route path="members" element={<AdminMembers />} />
+            </Route>
             <Route path="/lab" element={<ApiLab />} />
             <Route path="/about" element={<About />} />
             <Route path="*" element={<NotFound />} />
